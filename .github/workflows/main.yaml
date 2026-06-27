@@ -1,14 +1,24 @@
-name: CI
+name: Demo workflos
 on:
-    push:
-        branches: ["main"]
+  puch:
 
 jobs:
+  job1:
     build:
-        runs-on: ubuntu-latest
+      needs: [ dev ]
+      name: Build
+      steps:
+        - name: Build and deploy on Cloud
 
-        steps:
-            - uses: actions/checkout@v4
+  job2:
+    dev: 
+      name: Development
+      steps:
+        - name: Run the developer
 
-            - name: Run a one-line script
-              run: echo Hello, world!
+  job3:
+    test:
+      need:[ build, dev]
+      name: Test
+      steps: 
+        - name: Testing the application
