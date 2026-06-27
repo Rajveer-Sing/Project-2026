@@ -1,6 +1,6 @@
 name: Demo workflos
 on:
-  push:
+  push: null
 
 jobs:
   job1:
