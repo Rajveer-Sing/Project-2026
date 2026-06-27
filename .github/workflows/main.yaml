@@ -1,24 +1,23 @@
-name: Demo workflos
+name: Demo Workflows
+
 on:
-  push: null
+    push:
 
 jobs:
-  job1:
     build:
-      needs: [ dev ]
-      name: Build
-      steps:
-        - name: Build and deploy on Cloud
+        name: Build
+        needs: [Development]
+        steps:
+            - name: Build and deploy on Cloud
 
-  job2:
-    dev: 
-      name: Development
-      steps:
-        - name: Run the developer
+    dev:
+        name: Development
+        steps:
+            - name: Run the developer
 
-  job3:
-    test:
-      needs: [ build, dev]
-      name: Test
-      steps: 
-        - name: Testing the application
+    Test:
+        needs: [build, dev]
+        name: Testing
+        steps:
+            - name: Testing the application
+
