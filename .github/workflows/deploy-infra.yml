@@ -11,3 +11,8 @@ jobs:
   job1:
     name: "1. Terraform CI (Vslidateion & Scan)"
     runs-on: ubuntu-latest
+
+    steps:
+      # step 1: clone repository code onto the runner
+      - name: Checkout Code
+        uses: actions/checkout@v4
