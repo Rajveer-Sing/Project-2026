@@ -36,7 +36,7 @@ jobs:
         run: terraform validate
 
       - name: Run checkov Security Scan
-        usas: bridgecrewio/checkov-action@master
+        uses: bridgecrewio/checkov-action@master
         with:
           framework: terraform
           output_format: cli
@@ -46,7 +46,7 @@ jobs:
     name: "2. Terraform CD (Deploy on Azure)"
     needs: terraform_ci
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
