@@ -20,3 +20,8 @@ jobs:
       # step 1: clone repository code onto the runner
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
