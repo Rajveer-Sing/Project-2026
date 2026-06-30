@@ -6,7 +6,8 @@ on:
     branches:
       - main
 
-    pull:
-      branches:
-        - main
-        
+
+jobs:
+  job1:
+    name: "1. Terraform CI (Vslidateion & Scan)"
+    runs-on: ubuntu-latest
