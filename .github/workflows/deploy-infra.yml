@@ -1,0 +1,12 @@
+# Deploy infrastructure on azure cloud
+
+name: "Deployment of infra on azure cloud"
+on:
+  push:
+    branches:
+      - main
+
+    pull:
+      branches:
+        - main
+        
